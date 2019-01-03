@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import notify from './notify';
 import './App.css';
 
 class App extends Component {
   handleClick = () => {
-    notify();
+    import('./notify').then(({default: notify}) => {
+      notify();
+    })
   };
   render() {
     return (
